@@ -1,14 +1,19 @@
 import React from "react";
+import Chat from "./Chat";
 import io from "socket.io-client";
 
 import "./App.css";
 
 function App() {
-  const socket = io(`http://localhost:8000`);
+  const socket = io(`http://localhost:5000`);
   socket.on("welcome back", () => {
     console.log(`welcome back`);
   });
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Chat socket={socket} />
+    </div>
+  );
 }
 
 export default App;
