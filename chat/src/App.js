@@ -5,7 +5,7 @@ import io from "socket.io-client";
 import "./App.css";
 
 function App() {
-  const socket = io(`http://localhost:5000`);
+  const socket = io(`http://localhost:5000/chat`);
   socket.on("welcome back", () => {
     console.log(`welcome back`);
   });
