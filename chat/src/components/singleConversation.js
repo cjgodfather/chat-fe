@@ -1,10 +1,12 @@
 import React from "react";
 
-const ConversationSingle = props => {
+const ConversationSingle = ({ profile }) => {
   return (
     <div>
-      <img src={props.profileImg} alt="profile" />
-      <p>{props.name}</p>
+      <img src={profile.profileImg} alt="profile" />
+      <p>{profile.name}</p>
+      <p>{profile.status}</p>
+      <p>{profile.cohort}</p>
     </div>
   );
 };
