@@ -1,7 +1,14 @@
-import React, {useState,useEffect} from 'react';
+import React from "react";
+import SearchFriendForm from "../components/SearchFriendForm";
+import ConversationList from "../components/ConversationList";
 
 const SearchFriend = () => {
-    return (  );
-}
- 
+  return (
+    <div>
+      <SearchFriendForm />
+      <ConversationList />
+    </div>
+  );
+};
+
 export default SearchFriend;
