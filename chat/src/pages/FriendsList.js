@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
-const FriendList = props => {
-  const [friends, setFriends] = useState([]);
-
-  const getFriends = async () => {
-    const response = await axios.get(`http://localhost:5000/api/auth`);
-    setFriends(response.data.users);
-  };
-
-  useEffect(() => {
-    getFriends();
-  }, []);
-
+const FriendList = ({ friends, clickFriend }) => {
   return (
     <div>
       <ul>
-        {friends.map(f => (
-          <li>{f.username}</li>
-        ))}
+        {friends &&
+          friends.map(f => (
+            <li key={f._id} onClick={() => clickFriend(f._id)}>
+              {f.username}
+            </li>
+          ))}
       </ul>
     </div>
   );
